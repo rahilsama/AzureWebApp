@@ -9,9 +9,7 @@ trigger:
 variables:
 
   # Azure Resource Manager connection created during pipeline creation
-azure-pipelines
   azureSubscription: 'cc297fac-10b3-4479-82e9-15a493181412'
-main
 
   # Web app name
   webAppName: 'FirstJava1'
@@ -35,11 +33,8 @@ stages:
     - task: Maven@3
       displayName: 'Maven Package'
       inputs:
-azure-pipelines
-
         mavenPomFile: 'gs-spring-boot/complete/pom.xml'
-main
-
+        
     - task: CopyFiles@2
       displayName: 'Copy Files to artifact staging directory'
       inputs:
